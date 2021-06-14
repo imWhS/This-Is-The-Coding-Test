@@ -1,4 +1,4 @@
-#큰 수의 법칙 - 2
+#큰 수의 법칙
 
 numbers_cnt = [0] * 1000
 N, M, K = map(int, input().split())
@@ -8,6 +8,7 @@ for i in input_list:
 first = -1
 second = -1
 
+#가장 큰 수 first, 2번째로 큰 수 second 찾기
 i = 1000
 while i >= 0:
     i -= 1
@@ -21,6 +22,7 @@ while i >= 0:
             break
     elif second == -1:
         second = i
+        break
 
 print("first: " + str(first) + ", second: " + str(second))
 
