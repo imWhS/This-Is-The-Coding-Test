@@ -24,8 +24,6 @@ while i >= 0:
         second = i
         break
 
-print("first: " + str(first) + ", second: " + str(second))
-
 #총 길이 M 중에서 K + 1 길이의(first, second로 구성된) 수열이 반복되는 횟수에 K를 곱하면 하나의 수열을 구성하는 first 개수 도출
 first_cnt = int(M / (K + 1)) * K
 
