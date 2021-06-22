@@ -1,4 +1,4 @@
-#부품 찾기
+#부품 찾기 - 이진 탐색
 
 def binary_search(array, target, start, end):
 
