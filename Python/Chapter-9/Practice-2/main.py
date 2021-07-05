@@ -15,7 +15,7 @@ input:
 result:
 3
 
-Test Case 2
+Example 2
 input:
 4 2
 1 3
