@@ -1,8 +1,11 @@
+'''
+UNION-FIND
+'''
+
 def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
     return parent[x]
-
 
 def union(parent, a, b):
     a = find(parent, a)
@@ -12,7 +15,6 @@ def union(parent, a, b):
         parent[b] = a
     else:
         parent[a] = b
-
 
 # 노드 및 간선의 개수 입력
 V, E = map(int, input().split())
@@ -26,20 +28,4 @@ for v in range(V + 1):
 # 간선의 개수만큼 UNION 연산 입력 및 실행
 for e in range(E):
     a, b = map(int, input().split())
-
-    if find(PARENT, a) == find(PARENT, b):
-        continue
-
     union(PARENT, a, b)
-
-
-
-
-
-
-
-
-
-
-
-
