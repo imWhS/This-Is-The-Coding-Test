@@ -11,29 +11,39 @@
 '''
 
 S = str(input())
-stack = []
 
-for i in range(len(S) - 1, -1, -1):
-    stack.append(int(S[i]))
+result = 0
+for s in S:
+    added = result + int(s)
+    multiplied = result * int(s)
 
-print(stack)
-print(stack.pop())
-print(len(stack))
+    result = added if multiplied < added else multiplied
 
-while(len(stack)):
+print(result)
 
-    a = stack[-1]
-    stack.pop()
+'''
+다른 풀이
+1. 왼쪽에서 arr - 1까지 arr를 탐색해 변수 a, b에 2개의 숫자를 추출한다.
+2. a, b 둘 중 하나라도 0 혹은 1이라면 a + b 연산 후 b가 추출되었던 인덱스에 저장한다.
+3. i가 arr - 1일 때까지 반복한다.
+'''
 
-    b = 0
-    if len(stack) > 0:
-        b = stack[-1]
-        stack.pop()
+result = 0
+arr = []
 
-    b = stack[-2]
-    stack.pop()
+for s in S:
+    arr.append(int(s))
 
-    print(f"{a}, {b}")
+for s in range(0, len(arr) - 1):
+    current, next = int(s), int(s + 1)
+    a, b = int(arr[current]), int(arr[next])
+
+    if a <= 1 or b <= 1:
+        arr[next] = a + b
+    else:
+        arr[next] = a * b
+
+print(result)
 
 
 
